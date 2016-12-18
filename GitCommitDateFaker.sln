@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceEditor", "SequenceEditor\SequenceEditor.csproj", "{D4B4E451-E327-47F5-8422-18658387C781}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HistoryRewriter", "HistoryRewriter\HistoryRewriter.csproj", "{921C4679-A15E-4236-9EEB-C136D18E6258}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitCommitDatePicker", "GitCommitDatePicker\GitCommitDatePicker.csproj", "{3960BE0E-B236-4EA7-85BA-D7DFC12268B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{D4B4E451-E327-47F5-8422-18658387C781}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4B4E451-E327-47F5-8422-18658387C781}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4B4E451-E327-47F5-8422-18658387C781}.Release|Any CPU.Build.0 = Release|Any CPU
-		{921C4679-A15E-4236-9EEB-C136D18E6258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{921C4679-A15E-4236-9EEB-C136D18E6258}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{921C4679-A15E-4236-9EEB-C136D18E6258}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{921C4679-A15E-4236-9EEB-C136D18E6258}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3960BE0E-B236-4EA7-85BA-D7DFC12268B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3960BE0E-B236-4EA7-85BA-D7DFC12268B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3960BE0E-B236-4EA7-85BA-D7DFC12268B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3960BE0E-B236-4EA7-85BA-D7DFC12268B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

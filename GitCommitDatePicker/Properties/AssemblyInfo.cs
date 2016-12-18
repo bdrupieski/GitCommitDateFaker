@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("HistoryRewriter")]
+[assembly: AssemblyTitle("GitCommitDatePicker")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("HistoryRewriter")]
+[assembly: AssemblyProduct("GitCommitDatePicker")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("921c4679-a15e-4236-9eeb-c136d18e6258")]
+[assembly: Guid("3960be0e-b236-4ea7-85ba-d7dfc12268b1")]
 
 // Version information for an assembly consists of the following four values:
 //
