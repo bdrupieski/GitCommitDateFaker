@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using LibGit2Sharp;
 using MoreLinq;
@@ -82,10 +83,24 @@ namespace GitCommitDatePicker
             var dates = pickersUntilLastModified.Select(x => new DateTimeOffset(x.SelectedDateTime)).Reverse().ToList();
 
             var progressForm = new ProgressForm();
-            var worker = new BackgroundWorker();
+            var worker = new BackgroundWorker
+            {
+                WorkerReportsProgress = true
+            };
             worker.DoWork += (o, args) =>
             {
-                args.Result = RewriteDates(textBoxRepoPath.Text, dates);
+                var commandBatches = GenerateBatchedCommands(dates).ToList();
+                var sb = new StringBuilder();
+                for (int i = 0; i < commandBatches.Count; i++)
+                {
+                    var commands = commandBatches[i];
+                    string output = RunCommands(textBoxRepoPath.Text, commands);
+                    sb.AppendLine(output);
+                    double percentComplete = (i + 1)/(double) commandBatches.Count;
+                    int percentAsNumber = (int)(percentComplete*100);
+                    worker.ReportProgress(percentAsNumber);
+                }
+                args.Result = sb.ToString();
             };
             worker.RunWorkerCompleted += (o, args) =>
             {
@@ -93,6 +108,10 @@ namespace GitCommitDatePicker
                 var logForm = new RebaseLogForm((string)args.Result);
                 logForm.ShowDialog();
                 BuildDatePickerList();
+            };
+            worker.ProgressChanged += (o, args) =>
+            {
+                progressForm.ShowProgress(args.ProgressPercentage);
             };
             worker.RunWorkerAsync();
             progressForm.ShowDialog();
@@ -104,8 +123,8 @@ namespace GitCommitDatePicker
         private void BuildDatePickerList()
         {
             var branch = GetCurrentBranch();
-            var commits = branch.Commits.Take(100).ToList();
-
+            var commits = branch.Commits.Take(100).TakeWhile(x => x.Parents.Any()).ToList();
+            
             _datePickers = new List<CommitDatePickerUserControl>();
             tableLayoutPanelCommits.Controls.Clear();
             foreach (var commit in commits)
@@ -125,14 +144,14 @@ namespace GitCommitDatePicker
             buttonRebase.Enabled = _datePickers.Any(x => x.IsDateModified());
         }
 
-        private static string RewriteDates(string repoDirectoryPath, List<DateTimeOffset> dates)
+        private static string RunCommands(string workingDirectory, List<string> commands)
         {
             Process cmd = new Process
             {
                 StartInfo =
                 {
                     FileName = "cmd.exe",
-                    WorkingDirectory = repoDirectoryPath,
+                    WorkingDirectory = workingDirectory,
                     RedirectStandardInput = true,
                     RedirectStandardOutput = true,
                     CreateNoWindow = true,
@@ -140,8 +159,6 @@ namespace GitCommitDatePicker
                 }
             };
             cmd.Start();
-
-            var commands = GenerateCommands(dates);
 
             foreach (var command in commands)
             {
@@ -154,26 +171,27 @@ namespace GitCommitDatePicker
             return cmd.StandardOutput.ReadToEnd();
         }
 
-        private static List<string> GenerateCommands(List<DateTimeOffset> dates)
+        private static IEnumerable<List<string>> GenerateBatchedCommands(List<DateTimeOffset> dates)
         {
-            var commands = new List<string>
+            yield return new List<string>
             {
                 "SET PATH=%PATH%;" + Directory.GetCurrentDirectory(),
                 "SET GIT_SEQUENCE_EDITOR=SequenceEditor.exe",
                 $"git rebase -i HEAD~{dates.Count}",
-                "SET EDITOR=touch"
             };
 
             foreach (var date in dates)
             {
                 var iso8601Date = date.ToString("o");
 
-                commands.Add($"SET GIT_COMMITTER_DATE=\"{iso8601Date}\"");
-                commands.Add($"git commit --amend --date \"{iso8601Date}\"");
-                commands.Add("git rebase --continue");
+                yield return new List<string>
+                {
+                    "SET EDITOR=touch",
+                    $"SET GIT_COMMITTER_DATE=\"{iso8601Date}\"",
+                    $"git commit --amend --date \"{iso8601Date}\"",
+                    "git rebase --continue"
+                };
             }
-
-            return commands;
         }
     }
 }

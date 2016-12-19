@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.labelHoldOn = new System.Windows.Forms.Label();
+            this.labelPercent = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelHoldOn
@@ -36,22 +37,33 @@
             this.labelHoldOn.AutoSize = true;
             this.labelHoldOn.Location = new System.Drawing.Point(35, 11);
             this.labelHoldOn.Name = "labelHoldOn";
-            this.labelHoldOn.Size = new System.Drawing.Size(53, 13);
+            this.labelHoldOn.Size = new System.Drawing.Size(56, 13);
             this.labelHoldOn.TabIndex = 0;
-            this.labelHoldOn.Text = "Hold on...";
+            this.labelHoldOn.Text = "Working...";
             this.labelHoldOn.UseWaitCursor = true;
+            // 
+            // labelPercent
+            // 
+            this.labelPercent.AutoSize = true;
+            this.labelPercent.Location = new System.Drawing.Point(50, 32);
+            this.labelPercent.Name = "labelPercent";
+            this.labelPercent.Size = new System.Drawing.Size(21, 13);
+            this.labelPercent.TabIndex = 1;
+            this.labelPercent.Text = "0%";
+            this.labelPercent.UseWaitCursor = true;
             // 
             // ProgressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(120, 37);
+            this.ClientSize = new System.Drawing.Size(120, 57);
             this.ControlBox = false;
+            this.Controls.Add(this.labelPercent);
             this.Controls.Add(this.labelHoldOn);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(136, 53);
+            this.MaximumSize = new System.Drawing.Size(136, 73);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(136, 53);
+            this.MinimumSize = new System.Drawing.Size(136, 73);
             this.Name = "ProgressForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -66,5 +78,6 @@
         #endregion
 
         private System.Windows.Forms.Label labelHoldOn;
+        private System.Windows.Forms.Label labelPercent;
     }
 }
