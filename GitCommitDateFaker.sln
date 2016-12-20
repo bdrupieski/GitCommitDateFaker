@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequenceEditor", "SequenceEditor\SequenceEditor.csproj", "{D4B4E451-E327-47F5-8422-18658387C781}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitCommitDatePicker", "GitCommitDatePicker\GitCommitDatePicker.csproj", "{3960BE0E-B236-4EA7-85BA-D7DFC12268B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitCommitDateFaker", "GitCommitDateFaker\GitCommitDateFaker.csproj", "{3960BE0E-B236-4EA7-85BA-D7DFC12268B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

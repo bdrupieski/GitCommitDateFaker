@@ -8,8 +8,8 @@
     <ProjectGuid>{3960BE0E-B236-4EA7-85BA-D7DFC12268B1}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GitCommitDatePicker</RootNamespace>
-    <AssemblyName>GitCommitDatePicker</AssemblyName>
+    <RootNamespace>GitCommitDateFaker</RootNamespace>
+    <AssemblyName>GitCommitDateFaker</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -63,11 +63,11 @@
     <Compile Include="CommitDatePickerUserControl.Designer.cs">
       <DependentUpon>CommitDatePickerUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGitCommitDatePicker.cs">
+    <Compile Include="FormGitCommitDateFaker.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGitCommitDatePicker.Designer.cs">
-      <DependentUpon>FormGitCommitDatePicker.cs</DependentUpon>
+    <Compile Include="FormGitCommitDateFaker.Designer.cs">
+      <DependentUpon>FormGitCommitDateFaker.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="ProgressForm.cs">
@@ -86,8 +86,8 @@
     <EmbeddedResource Include="CommitDatePickerUserControl.resx">
       <DependentUpon>CommitDatePickerUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGitCommitDatePicker.resx">
-      <DependentUpon>FormGitCommitDatePicker.cs</DependentUpon>
+    <EmbeddedResource Include="FormGitCommitDateFaker.resx">
+      <DependentUpon>FormGitCommitDateFaker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProgressForm.resx">
       <DependentUpon>ProgressForm.cs</DependentUpon>
@@ -100,6 +100,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RebaseLogForm.resx">
       <DependentUpon>RebaseLogForm.cs</DependentUpon>

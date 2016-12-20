@@ -17,7 +17,7 @@ namespace SequenceEditor
     /// This wouldn't be necessary if I could pass a 
     /// sed script to GIT_SEQUENCE_EDITOR in Windows.
     /// </summary>
-    class Program
+    public static class Program
     {
         static void Main(string[] args)
         {

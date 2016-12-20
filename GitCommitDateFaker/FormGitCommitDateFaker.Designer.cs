@@ -1,6 +1,6 @@
-﻿namespace GitCommitDatePicker
+﻿namespace GitCommitDateFaker
 {
-    partial class FormGitCommitDatePicker
+    partial class FormGitCommitDateFaker
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGitCommitDatePicker));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGitCommitDateFaker));
             this.textBoxRepoPath = new System.Windows.Forms.TextBox();
             this.buttonPickRepo = new System.Windows.Forms.Button();
             this.labelRepoPath = new System.Windows.Forms.Label();
@@ -118,7 +118,7 @@
             this.buttonRebase.UseVisualStyleBackColor = true;
             this.buttonRebase.Click += new System.EventHandler(this.buttonRebase_Click);
             // 
-            // FormGitCommitDatePicker
+            // FormGitCommitDateFaker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,10 +132,10 @@
             this.Controls.Add(this.textBoxRepoPath);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(470, 435);
-            this.Name = "FormGitCommitDatePicker";
+            this.Name = "FormGitCommitDateFaker";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Git Commit Date Picker";
+            this.Text = "Git Commit Date Faker";
             this.ResumeLayout(false);
             this.PerformLayout();
 

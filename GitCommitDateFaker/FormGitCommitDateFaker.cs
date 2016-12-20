@@ -9,13 +9,13 @@ using System.Windows.Forms;
 using LibGit2Sharp;
 using MoreLinq;
 
-namespace GitCommitDatePicker
+namespace GitCommitDateFaker
 {
-    public partial class FormGitCommitDatePicker : Form
+    public partial class FormGitCommitDateFaker : Form
     {
         private List<CommitDatePickerUserControl> _datePickers;
 
-        public FormGitCommitDatePicker()
+        public FormGitCommitDateFaker()
         {
             InitializeComponent();
         }
@@ -78,6 +78,7 @@ namespace GitCommitDatePicker
 
         private void buttonRebase_Click(object sender, EventArgs e)
         {
+            buttonRebase.Enabled = false;
             var lastModifiedPicker = _datePickers.Last(x => x.IsDateModified());
             var pickersUntilLastModified = _datePickers.TakeUntil(x => x == lastModifiedPicker);
             var dates = pickersUntilLastModified.Select(x => new DateTimeOffset(x.SelectedDateTime)).Reverse().ToList();

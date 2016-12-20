@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using LibGit2Sharp;
 
-namespace GitCommitDatePicker
+namespace GitCommitDateFaker
 {
     public partial class CommitDatePickerUserControl : UserControl
     {

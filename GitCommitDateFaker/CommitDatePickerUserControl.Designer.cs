@@ -1,4 +1,4 @@
-﻿namespace GitCommitDatePicker
+﻿namespace GitCommitDateFaker
 {
     partial class CommitDatePickerUserControl
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace GitCommitDatePicker
+namespace GitCommitDateFaker
 {
     static class Program
     {
@@ -13,7 +13,7 @@ namespace GitCommitDatePicker
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormGitCommitDatePicker());
+            Application.Run(new FormGitCommitDateFaker());
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace GitCommitDatePicker
+namespace GitCommitDateFaker
 {
     public partial class ProgressForm : Form
     {
