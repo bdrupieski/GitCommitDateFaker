@@ -36,6 +36,8 @@
             this.comboBoxBranches = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanelCommits = new System.Windows.Forms.TableLayoutPanel();
             this.buttonRebase = new System.Windows.Forms.Button();
+            this.groupBoxCommits = new System.Windows.Forms.GroupBox();
+            this.groupBoxCommits.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxRepoPath
@@ -45,13 +47,13 @@
             this.textBoxRepoPath.Enabled = false;
             this.textBoxRepoPath.Location = new System.Drawing.Point(103, 14);
             this.textBoxRepoPath.Name = "textBoxRepoPath";
-            this.textBoxRepoPath.Size = new System.Drawing.Size(300, 20);
+            this.textBoxRepoPath.Size = new System.Drawing.Size(285, 20);
             this.textBoxRepoPath.TabIndex = 0;
             // 
             // buttonPickRepo
             // 
             this.buttonPickRepo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPickRepo.Location = new System.Drawing.Point(409, 12);
+            this.buttonPickRepo.Location = new System.Drawing.Point(394, 12);
             this.buttonPickRepo.Name = "buttonPickRepo";
             this.buttonPickRepo.Size = new System.Drawing.Size(115, 23);
             this.buttonPickRepo.TabIndex = 1;
@@ -86,7 +88,7 @@
             this.comboBoxBranches.FormattingEnabled = true;
             this.comboBoxBranches.Location = new System.Drawing.Point(103, 42);
             this.comboBoxBranches.Name = "comboBoxBranches";
-            this.comboBoxBranches.Size = new System.Drawing.Size(300, 21);
+            this.comboBoxBranches.Size = new System.Drawing.Size(285, 21);
             this.comboBoxBranches.TabIndex = 4;
             this.comboBoxBranches.SelectedIndexChanged += new System.EventHandler(this.comboBoxBranches_SelectedIndexChanged);
             // 
@@ -99,18 +101,19 @@
             this.tableLayoutPanelCommits.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanelCommits.ColumnCount = 1;
             this.tableLayoutPanelCommits.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanelCommits.Location = new System.Drawing.Point(12, 69);
+            this.tableLayoutPanelCommits.Location = new System.Drawing.Point(6, 19);
             this.tableLayoutPanelCommits.Name = "tableLayoutPanelCommits";
+            this.tableLayoutPanelCommits.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
             this.tableLayoutPanelCommits.RowCount = 1;
             this.tableLayoutPanelCommits.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelCommits.Size = new System.Drawing.Size(512, 510);
+            this.tableLayoutPanelCommits.Size = new System.Drawing.Size(485, 496);
             this.tableLayoutPanelCommits.TabIndex = 5;
             // 
             // buttonRebase
             // 
             this.buttonRebase.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRebase.Enabled = false;
-            this.buttonRebase.Location = new System.Drawing.Point(409, 40);
+            this.buttonRebase.Location = new System.Drawing.Point(394, 40);
             this.buttonRebase.Name = "buttonRebase";
             this.buttonRebase.Size = new System.Drawing.Size(115, 23);
             this.buttonRebase.TabIndex = 6;
@@ -118,13 +121,26 @@
             this.buttonRebase.UseVisualStyleBackColor = true;
             this.buttonRebase.Click += new System.EventHandler(this.buttonRebase_Click);
             // 
+            // groupBoxCommits
+            // 
+            this.groupBoxCommits.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBoxCommits.Controls.Add(this.tableLayoutPanelCommits);
+            this.groupBoxCommits.Location = new System.Drawing.Point(12, 69);
+            this.groupBoxCommits.Name = "groupBoxCommits";
+            this.groupBoxCommits.Size = new System.Drawing.Size(497, 521);
+            this.groupBoxCommits.TabIndex = 7;
+            this.groupBoxCommits.TabStop = false;
+            this.groupBoxCommits.Text = "Commits:";
+            // 
             // FormGitCommitDateFaker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 591);
+            this.ClientSize = new System.Drawing.Size(521, 602);
+            this.Controls.Add(this.groupBoxCommits);
             this.Controls.Add(this.buttonRebase);
-            this.Controls.Add(this.tableLayoutPanelCommits);
             this.Controls.Add(this.comboBoxBranches);
             this.Controls.Add(this.labelBranch);
             this.Controls.Add(this.labelRepoPath);
@@ -136,6 +152,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Git Commit Date Faker";
+            this.groupBoxCommits.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,6 +167,7 @@
         private System.Windows.Forms.ComboBox comboBoxBranches;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelCommits;
         private System.Windows.Forms.Button buttonRebase;
+        private System.Windows.Forms.GroupBox groupBoxCommits;
     }
 }
 
